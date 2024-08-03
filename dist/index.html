@@ -6,24 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Guess it right</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #8360c3, #2ebf91);
+        }
+
+        #header {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        #input {
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        #button {
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        #button:hover {
+            background-color: #ff6f61;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-500">
+<body class="min-h-screen flex items-center justify-center">
 
-    <div class="container mx-auto mt-10 ">
-        <div class="border border-black p-8 rounded-md ">
-
-            <div id="header" class=" p-4 text-center text-3xl font-bold rounded-md">
+    <div class="container mx-auto px-4 py-8 max-w-lg">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <div id="header" class="p-4 text-center text-3xl font-bold rounded-md">
                 <p>Guess a Number between 1 to 100</p>
             </div>
 
-            <div class="flex justify-center
-             mt-4 p-4 text-center gap-12">
-                <div class="border border-orange-600  w-8/12 h-10 rounded-md">
-                    <input type="number" id="input" placeholder="Enter a number here..." class="border border-orange-600 w-full h-full rounded-md">
+            <div class="flex flex-col md:flex-row justify-center mt-4 p-4 text-center gap-4">
+                <div class="w-full md:w-8/12 h-12">
+                    <input type="number" id="input" placeholder="Enter a number here..." class="w-full h-full px-4 py-2 rounded-md border border-gray-300">
                 </div>
-                <div class="justify-center bg-orange-500 hover:bg-orange-400 hover:cursor-pointer text-center w-3/12 rounded-md p-1">
-                    <button type="button" id="button" class="text-lg font-semibold justify-center">
+                <div class="w-full md:w-4/12 h-12">
+                    <button type="button" id="button" class="w-full h-full text-lg font-semibold bg-orange-500 text-white rounded-md p-2">
                         Guess
                     </button>
                 </div>
@@ -31,16 +51,14 @@
 
             <div class="mt-4 text-center">
                 <div>
-                    <p id="wrong"></p>
+                    <p id="wrong" class="text-red-500 font-semibold"></p>
                 </div>
                 <div class="p-4">
-                    <p id="guesses">No. of Guess are: 0</p>
+                    <p id="guesses">No. of Guesses: 0</p>
                 </div>
             </div>
-
         </div>
     </div>
-
 
     <script src="script.js"></script>
 </body>
